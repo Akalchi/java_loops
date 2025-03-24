@@ -17,4 +17,11 @@ public class MultiplicationTable {
         
         return table;
     }
+
+    public void printTable() {
+        String[] table = generateTable();
+        for (String line : table) {
+            System.out.println(line);
+        }
+    }
 }
