@@ -1,6 +1,7 @@
 package dev.alejandra;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ public class MultiplicationTableTest {
 
     @Test
     public void testGenerateTableForNumberFive() {
-       
+
         MultiplicationTable table = new MultiplicationTable(5);
         String[] expected = {
             "5 x 1 = 5",
@@ -30,7 +31,7 @@ public class MultiplicationTableTest {
 
     @Test
     public void testGenerateTableForNumberZero() {
-       
+
         MultiplicationTable table = new MultiplicationTable(0);
         String[] expected = {
             "0 x 1 = 0",
@@ -53,7 +54,7 @@ public class MultiplicationTableTest {
 
     @Test
     public void testGenerateTableForNegativeNumber() {
-        
+
         MultiplicationTable table = new MultiplicationTable(-3);
         String[] expected = {
             "-3 x 1 = -3",
@@ -71,5 +72,13 @@ public class MultiplicationTableTest {
         String[] actual = table.generateTable();
 
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintTable() {
+        
+        MultiplicationTable table = new MultiplicationTable(7);
+
+        assertDoesNotThrow(() -> table.printTable());
     }
 }
